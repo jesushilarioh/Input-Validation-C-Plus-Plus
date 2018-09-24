@@ -3,14 +3,13 @@ using namespace std;
 
 int main()
 {
-     // Variables
+    // Variables
     int num;
 
     // Ask user to enter a number
-    cout << "Enter the number 2: ";
+    cout << "Enter the number 2 or 4: ";
 
-    // Error Checkin algorithim
-    while (!(cin >> num) || (num != 2))
+    while (!(cin >> num) || ((num != 2) && (num != 4)))
     {
         // Explain error
         cout << "ERROR: a number must be entered: ";
@@ -24,7 +23,7 @@ int main()
     cout << "Your favorite number is: " << num << endl;
     // Salutation
     cout << "Thanks. Bye." << endl;
-
+    
     // Terminate program
     return 0;
 }
