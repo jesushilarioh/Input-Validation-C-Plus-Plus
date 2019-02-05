@@ -1,3 +1,10 @@
+/********************************************
+ * This program check for valid user input.
+ * In this case an integer.
+ *
+ * By: Jesus HIlario Hernandez
+ * Last Updated: Januray 5th, 2019
+ *********************************************/
 #include <iostream>
 #include <ctype.h>  // isdigit()
 #include <sstream>  // stringstream
