@@ -22,17 +22,12 @@ int main()
 
     do
     {
-        cout << "Enter a number: ";
+        cout << "Enter a positive number: ";
         cin >> user_string_num;
 
         if (user_string_num[0] == '-') // jesus -8
-        {
-            is_num++;
+            is_num = 0;
 
-            if (user_string_num[1] == '0') // -0999 invalid
-                is_num = 0;
-        }
-        
         if (user_string_num[0] == '0' && 
             isdigit(user_string_num[1])) // 0934939
             is_num = 0;
@@ -59,9 +54,9 @@ int main()
 
             cout << endl
                  << user_string_num << "(user_string_num) "
-                 << "is a number!"  << endl
+                 << "is a positive number!"  << endl
                  << user_converted_num << "(user_converted_num) "
-                 << "is a number!"  << endl
+                 << "is a positive number!"  << endl
                  << endl;
         }
         else
@@ -80,6 +75,7 @@ int main()
             is_num          = 0;
             decimal_count   = 0;
         }
+
 
     } while (is_num_bool == 0);
     
