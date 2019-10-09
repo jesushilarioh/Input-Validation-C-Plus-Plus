@@ -23,8 +23,7 @@ int main()
 
     do
     {
-        cout << "Enter a number: ";   
-
+        cout << "Enter a number: ";
         // cin >> user_string_num;
         getline(cin, user_string_num);
 
@@ -83,12 +82,6 @@ int main()
                  << endl
                  << "Press [ENTER] to continue...";
 
-
- 
-            is_num_bool     = 0;
-            is_num          = 0;
-            decimal_count   = 0;
-
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
@@ -96,7 +89,6 @@ int main()
             is_num = 0;
             decimal_count = 0;
             contains_spaces = false;
-          
         }
 
     } while (is_num_bool == 0);
