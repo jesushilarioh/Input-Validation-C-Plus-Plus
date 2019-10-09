@@ -23,7 +23,7 @@ int main()
     do
     {
         cout << "Enter a number: ";
-        cin >> user_string_num;
+        getline(cin, user_string_num);      
 
         if (user_string_num[0] == '-') // jesus -8
         {
@@ -73,9 +73,7 @@ int main()
                  << "Number must NOT be a decimal number.\n" 
                  << endl;
 
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
+ 
             is_num_bool     = 0;
             is_num          = 0;
             decimal_count   = 0;
