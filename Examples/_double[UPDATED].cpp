@@ -20,12 +20,19 @@ int main()
 
     double user_converted_num;
 
-    bool is_num_bool = 0;
+    bool is_num_bool = 0,
+         contains_spaces = false;
 
     do
     {
         cout << "Enter a decimal number: ";
-        cin >> user_string_num;
+        getline(cin, user_string_num);
+
+        for (int i = 0; i < user_string_num.size(); i++)
+        {
+            if (isspace(user_string_num[i]))
+                contains_spaces = true;
+        }
 
         if (user_string_num[0] == '-') // jesus -8
         {
@@ -35,9 +42,7 @@ int main()
                 is_num = 0;
         }
         
-            
-        if (user_string_num[0] == '0' && 
-            isdigit(user_string_num[1])) // 0934939
+        if ((user_string_num[0] == '0' && isdigit(user_string_num[1]))) // 0934939
             is_num = 0;
         else 
         {
@@ -53,7 +58,7 @@ int main()
         if (decimal_count == 1) // 66.7 // 8..9.9.9..9.9
             is_num++;
         
-        if (is_num == user_string_num.size()) 
+        if (is_num == user_string_num.size() && contains_spaces == false) 
         {
             stringstream str_stream_object(user_string_num);
             str_stream_object >> user_converted_num;
@@ -61,14 +66,11 @@ int main()
             is_num_bool = 1;
 
             cout << endl 
-                 // << setprecision(2) << fixed
                  << user_string_num << "(user_string_num) "
                  << "is a decimal number!"  << endl
                  << user_converted_num << "(user_converted_num) "
                  << "is a decimal number!"  << endl
                  << endl;
-            
-            str_stream_object.str("");
             
         }
         else
@@ -78,14 +80,17 @@ int main()
                  << "Number must NOT contain letters.\n"
                  << "Number must NOT contain symbols.\n"
                  << "Number must NOT be a decimal number.\n" 
-                 << endl;
-
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                 << endl
+                 << "Press [ENTER] to continue...";
 
             is_num_bool     = 0;
             is_num          = 0;
             decimal_count   = 0;
+            contains_spaces = false;
+
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            
         }
 
 
