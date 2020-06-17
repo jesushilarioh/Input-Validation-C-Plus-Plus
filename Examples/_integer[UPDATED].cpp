@@ -23,8 +23,7 @@ int main()
 
     do
     {
-        cout << "Enter a number: ";   
-
+        cout << "Enter a number: ";
         // cin >> user_string_num;
         getline(cin, user_string_num);
 
@@ -80,17 +79,13 @@ int main()
                  << "Number must NOT contain letters.\n"
                  << "Number must NOT contain symbols.\n"
                  << "Number must NOT be a decimal number.\n"
-                 << endl
-                 << "Press [ENTER] to continue...";
+                 << endl;
 
             is_num_bool = 0;
             is_num = 0;
             decimal_count = 0;
             contains_spaces = false;
 
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-          
         }
 
     } while (is_num_bool == 0);
