@@ -70,25 +70,22 @@ int main()
                  << user_converted_num << "(user_converted_num) "
                  << "is a number!" << endl
                  << endl;
+        
         }
         else
         {
-
             cout << endl
                  << "Number must NOT contain spaces.\n"
                  << "Number must NOT contain letters.\n"
                  << "Number must NOT contain symbols.\n"
                  << "Number must NOT be a decimal number.\n"
-                 << endl
-                 << "Press [ENTER] to continue...";
-
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                 << endl;
 
             is_num_bool = 0;
             is_num = 0;
             decimal_count = 0;
             contains_spaces = false;
+
         }
 
     } while (is_num_bool == 0);
